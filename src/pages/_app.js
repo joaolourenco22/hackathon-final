@@ -1,9 +1,11 @@
 import "@/styles/globals.css";
+import Sidebar from "@/components/Sidebar";
 
 export default function App({ Component, pageProps }) {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
-      <main className="">
+    <div className="min-h-screen ui-shell flex">
+      <Sidebar />
+      <main className="flex-1">
         <Component {...pageProps} />
       </main>
     </div>

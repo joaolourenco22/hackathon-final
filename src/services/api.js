@@ -1,43 +1,48 @@
-// GET /api/nomes - Carregar todos os nomes
-export async function carregarNomesAPI() {
-  try {
-    const response = await fetch('/api/nomes')
-    
-    if (!response.ok) {
-      console.error('Erro na resposta:', response.status, response.statusText)
-      throw new Error('Erro ao carregar nomes')
-    }
-    
-    const data = await response.json()
-    return data
+// Serviço de chamadas à API do Dashboard do Recrutador
 
-  } catch (error) {
-    console.error('Erro ao carregar nomes:', error)
-    throw error
-  }
+function toQuery(params = {}) {
+  const searchParams = new URLSearchParams();
+  Object.entries(params).forEach(([k, v]) => {
+    if (v === undefined || v === null || v === '') return;
+    searchParams.set(k, String(v));
+  });
+  const qs = searchParams.toString();
+  return qs ? `?${qs}` : '';
 }
 
-// POST /api/nomes - Adicionar novo nome
-export async function adicionarNomeAPI(nome) {
-  try {
-    const response = await fetch('/api/nomes', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ nome })
-    })
+export async function fetchCandidates(params = {}) {
+  const res = await fetch(`/api/candidates${toQuery(params)}`);
+  if (!res.ok) throw new Error('Erro ao carregar candidatos');
+  return res.json();
+}
 
-    if (!response.ok) {
-      const errorData = await response.json()
-      throw new Error(errorData.erro || 'Erro ao adicionar nome')
-    }
-    
-    const resultado = await response.json()
-    return resultado
+export async function fetchKPIs(params = {}) {
+  const res = await fetch(`/api/kpis${toQuery(params)}`);
+  if (!res.ok) throw new Error('Erro ao carregar KPIs');
+  return res.json();
+}
 
-  } catch (error) {
-    console.error('Erro ao adicionar nome:', error)
-    throw error
+export async function fetchCandidateById(id, params = {}) {
+  const res = await fetch(`/api/candidates/${id}${toQuery(params)}`);
+  if (!res.ok) throw new Error('Erro ao carregar candidato');
+  return res.json();
+}
+
+export async function createCandidate(payload) {
+  const res = await fetch('/api/candidates', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.erro || 'Erro ao criar candidato');
   }
+  return res.json();
+}
+
+export async function seed(reset = true) {
+  const res = await fetch(`/api/seed${toQuery({ reset })}`, { method: 'POST' });
+  if (!res.ok) throw new Error('Erro ao semear base de dados');
+  return res.json();
 }

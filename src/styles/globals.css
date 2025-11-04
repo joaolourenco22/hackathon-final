@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #eef3ff; /* soft blue background like reference */
+  --foreground: #0f172a; /* slate-900 */
+  --primary: #7c3aed; /* violet */
+  --primary-2: #4f46e5; /* indigo */
+  --panel-bg: rgba(255, 255, 255, 0.72);
+  --panel-border: rgba(255, 255, 255, 0.65);
+  --panel-shadow: 0 10px 25px rgba(16, 24, 40, 0.08);
 }
 
 @theme inline {
@@ -24,3 +29,49 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Shell gradient (background + subtle radial) */
+.ui-shell {
+  background:
+    radial-gradient(1200px 600px at -10% -10%, rgba(79, 70, 229, 0.16), transparent 60%),
+    radial-gradient(900px 500px at 110% 0%, rgba(124, 58, 237, 0.12), transparent 60%),
+    linear-gradient(180deg, #f3f6ff 0%, #eef3ff 40%, #eef2ff 100%);
+}
+
+/* Glass panels */
+.ui-panel {
+  background: var(--panel-bg) !important;
+  border: 1px solid var(--panel-border);
+  box-shadow: var(--panel-shadow);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+}
+
+/* Primary button */
+.ui-button-primary {
+  background: linear-gradient(135deg, var(--primary-2), var(--primary));
+  color: #fff;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 8px 16px rgba(79, 70, 229, 0.25);
+}
+.ui-button-primary:hover { filter: brightness(1.05); }
+.ui-button-primary:disabled { opacity: 0.6; box-shadow: none; }
+
+/* Chip */
+.ui-chip {
+  background: rgba(124, 58, 237, 0.08);
+  color: #6d28d9;
+  border-radius: 9999px;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+/* Sidebar gradient card */
+.ui-sidebar {
+  background: linear-gradient(180deg, rgba(59,130,246,0.95), rgba(124,58,237,0.95));
+  color: #fff;
+}
+.ui-sidebar a { color: #f3f4f6; }
+.ui-sidebar a:hover { color: #ffffff; background: rgba(255,255,255,0.1); }
