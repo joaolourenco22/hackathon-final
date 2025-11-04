@@ -47,12 +47,10 @@ export default function Home() {
         console.error(e);
       }
     })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     loadAll();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [weightHard]);
 
   const activeCandidate = useMemo(
@@ -64,26 +62,8 @@ export default function Home() {
     <div className="bg-[#f5f5f8] min-h-screen p-4">
       <div className="max-w-7xl mx-auto space-y-4">
         <header className="flex items-center justify-between">
-          <h1 className="text-xl font-semibold">Dashboard do Recrutador</h1>
-          <div className="text-sm text-gray-800">Peso Hard: {(weightHard * 100).toFixed(0)}%</div>
+          <h1 className="text-xl font-semibold">Bem-vindo!</h1>
         </header>
-
-        <Filters
-          filters={filters}
-          onFiltersChange={setFilters}
-          weightHard={weightHard}
-          onWeightHardChange={setWeightHard}
-          loading={loading}
-          onApply={loadAll}
-        />
-
-        <KPIs kpis={kpis} />
-
-
-        <section className="ui-panel p-4">
-          <h2 className="text-sm text-gray-700 mb-2">Radar Individual (Soft Skills)</h2>
-          <IndividualPanel candidate={activeCandidate} />
-        </section>
       </div>
     </div>
   );
