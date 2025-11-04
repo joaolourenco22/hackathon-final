@@ -58,7 +58,7 @@ export default function Candidatos() {
           <div className="text-sm text-gray-800">Ordenado por Maior Score</div>
         </header>
 
-        <section>
+        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {candidates.map((c, i) => (
             <CandidateCard key={c._id} candidate={c} index={i} />
           ))}

@@ -263,6 +263,9 @@ app.post('/api/candidates', async (req, res) => {
     }
 
     const soft = body.soft_skills || {};
+    const prefRaw = String(body.preference || '').toLowerCase();
+    const allowedPrefs = ['full_time', 'part_time', 'hybrid'];
+    const preference = allowedPrefs.includes(prefRaw) ? prefRaw : 'full_time';
     const cleaned = {
       name: String(body.name || '').trim(),
       role: String(body.role || '').trim(),
@@ -280,6 +283,7 @@ app.post('/api/candidates', async (req, res) => {
         leadership: clamp01to100(soft.leadership),
         creativity: clamp01to100(soft.creativity),
       },
+      preference,
     };
 
     if (!cleaned.name || !cleaned.role || !cleaned.location) {
@@ -308,7 +312,7 @@ app.post('/api/seed', async (req, res) => {
       await Candidate.deleteMany({});
     }
 
-    const sample = [
+    let sample = [
       { name: 'Ana Silva', role: 'Frontend Developer', location: 'São Paulo', years_experience: 3, tags: ['react', 'ui', 'css'], hard_score: 92, soft_skills: { communication: 78, teamwork: 62, problem_solving: 69, adaptability: 74, leadership: 50, creativity: 88 } },
       { name: 'Bruno Costa', role: 'Backend Developer', location: 'Rio de Janeiro', years_experience: 5, tags: ['node', 'api', 'docker'], hard_score: 86, soft_skills: { communication: 55, teamwork: 72, problem_solving: 93, adaptability: 60, leadership: 62, creativity: 48 } },
       { name: 'Carla Ramos', role: 'Data Scientist', location: 'Lisboa', years_experience: 4, tags: ['python', 'ml', 'stats'], hard_score: 95, soft_skills: { communication: 70, teamwork: 58, problem_solving: 96, adaptability: 66, leadership: 45, creativity: 62 } },
@@ -331,7 +335,9 @@ app.post('/api/seed', async (req, res) => {
       { name: 'Tiago Vieira', role: 'Mobile Developer', location: 'Curitiba', years_experience: 3, tags: ['android', 'kotlin'], hard_score: 82, soft_skills: { communication: 68, teamwork: 72, problem_solving: 86, adaptability: 62, leadership: 55, creativity: 59 } },
     ];
 
-    const inserted = await Candidate.insertMany(sample);
+    const prefs = ['full_time','part_time','hybrid'];
+    const sampleWithPrefs = sample.map((c,i)=>({ ...c, preference: prefs[i % prefs.length] }));
+    const inserted = await Candidate.insertMany(sampleWithPrefs);
     res.status(201).json({ inserted: inserted.length });
   } catch (err) {
     console.error('Erro em POST /api/seed:', err);
@@ -359,3 +365,5 @@ const iniciarServidor = async () => {
 };
 
 iniciarServidor();
+
+

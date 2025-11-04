@@ -2,8 +2,9 @@
 
 :root {
   /* Paleta solicitada */
-  --nu-roxo: #8A05BE;
-  --nu-roxo-claro: #BA4DE3;
+  /* Softer professional purple */
+  --nu-roxo: #8B5CF6;       /* violet-500 */
+  --nu-roxo-claro: #C4B5FD; /* violet-300 */
   --nu-branco: #FFFFFF;
   --nu-preto: #191919;
   --nu-cinza-claro: #F5F5F5;
@@ -16,9 +17,9 @@
   --foreground: var(--nu-preto);
   --primary: var(--nu-roxo);
   --primary-2: var(--nu-roxo-claro);
-  --panel-bg: rgba(255, 255, 255, 0.72);
-  --panel-border: rgba(255, 255, 255, 0.65);
-  --panel-shadow: 0 10px 25px rgba(16, 24, 40, 0.08);
+  --panel-bg: #ffffff;
+  --panel-border: #E5E7EB; /* gray-200 */
+  --panel-shadow: 0 1px 2px rgba(16, 24, 40, 0.06), 0 8px 20px rgba(16, 24, 40, 0.04);
 }
 
 @theme inline {
@@ -46,31 +47,32 @@ body {
   background: var(--background);
 }
 
-/* Glass panels */
+/* Panels */
 .ui-panel {
   background: var(--panel-bg) !important;
   border: 1px solid var(--panel-border);
   box-shadow: var(--panel-shadow);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 16px;
+  border-radius: 12px;
 }
 
 /* Primary button */
 .ui-button-primary {
   background: var(--primary);
   color: #fff;
-  border-radius: 9999px;
+  border-radius: 8px;
   padding: 0.5rem 1rem;
-  box-shadow: 0 8px 16px rgba(138, 5, 190, 0.25);
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.06);
+  border: 1px solid color-mix(in srgb, var(--primary) 25%, #e5e7eb);
+  transition: background-color .2s ease, box-shadow .2s ease;
 }
-.ui-button-primary:hover { filter: brightness(1.05); }
+.ui-button-primary:hover { filter: brightness(1.03); box-shadow: 0 2px 6px rgba(16, 24, 40, 0.10); }
 .ui-button-primary:disabled { opacity: 0.6; box-shadow: none; }
 
 /* Chip */
 .ui-chip {
-  background: color-mix(in srgb, var(--primary) 12%, transparent);
+  background: color-mix(in srgb, var(--primary) 8%, #fff);
   color: var(--primary);
+  border: 1px solid color-mix(in srgb, var(--primary) 18%, #e5e7eb);
   border-radius: 9999px;
   padding: 0.125rem 0.5rem;
   font-size: 0.75rem;
@@ -83,3 +85,19 @@ body {
 }
 .ui-sidebar a { color: #f3f4f6; }
 .ui-sidebar a:hover { color: #ffffff; background: rgba(255,255,255,0.1); }
+
+/* Progress bar */
+.ui-progress {
+  height: 6px;
+  background: #F3F4F6; /* gray-100 */
+  border-radius: 9999px;
+  overflow: hidden;
+}
+.ui-progress > span {
+  display: block;
+  height: 100%;
+  background: var(--primary);
+  border-radius: inherit;
+  transition: width .3s ease;
+}
+
