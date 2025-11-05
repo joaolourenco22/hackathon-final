@@ -34,7 +34,7 @@ export default function ComparisonRadar({ candidates = [], selectedIds = [] }) {
         />
       </div>
 
-      <div className="text-xs text-[color:var(--text-muted)] mt-2">
+      <div className="text-sm font-bold text-gray-700 text-center">
         Selecione até 3 candidatos para comparar.
       </div>
     </div>

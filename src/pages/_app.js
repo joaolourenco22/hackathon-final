@@ -43,11 +43,11 @@ export default function App({ Component, pageProps }) {
   }
 
   return (
-    <div className="min-h-screen flex bg-gradient-to-br from-violet-50 to-indigo-50/30 text-gray-900">
+    <div className="min-h-screen flex bg-gradient-to-br p-2 from-violet-50 to-indigo-50/30 text-gray-900">
       <Sidebar />
-      <main className="flex-1 flex flex-col min-h-screen">
+      <main className="gap-2 px-2 flex flex-col w-full min-h-screen">
         {user && (
-          <div className="sticky top-0 z-30 flex items-center justify-between px-4 py-2 border-b bg-violet-500 rounded-2xl mx-5">
+          <div className="flex items-center justify-between px-4 py-2 border-b bg-violet-500 rounded-2xl w-full">
             <div className="text-4xl text-white"><span className="font-bold">Bem-vindo!</span></div>
             <button onClick={logout} className="text-xs text-white/90 hover:text-white underline">Sair</button>
           </div>
