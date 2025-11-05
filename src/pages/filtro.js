@@ -49,25 +49,25 @@ function deriveStacks(c) {
 // Mocked candidates
 const MOCK_CANDIDATES = [
   {
-    _id: 'c1', name: 'Ana Souza', role: 'Desenvolvedora Frontend', location: 'São Paulo',
+    _id: 'c1', name: 'Ana Souza', role: 'Desenvolvedora Frontend', location: 'Coimbra',
     work_mode: 'remote', carga: 'full_time', relocate: 'no', years_experience: 4,
     tags: ['react','typescript','javascript','css','tailwind','next'], total_score: 82, hard_score: 78,
     soft_skills: { 'Comunicação': 4, 'Colaboração': 5, 'Liderança': 3, 'Adaptabilidade': 4, 'Resolução de Problemas': 4, 'Criatividade': 4 },
   },
   {
-    _id: 'c2', name: 'Bruno Lima', role: 'Engenheiro Backend', location: 'Rio de Janeiro',
+    _id: 'c2', name: 'Bruno Lima', role: 'Engenheiro Backend', location: 'Braga',
     work_mode: 'hybrid', carga: 'full_time', relocate: 'yes', years_experience: 6,
     tags: ['node','typescript','docker','aws','postgres','express'], total_score: 88, hard_score: 84,
     soft_skills: { 'Comunicação': 3, 'Colaboração': 4, 'Liderança': 4, 'Adaptabilidade': 5, 'Resolução de Problemas': 5, 'Criatividade': 3 },
   },
   {
-    _id: 'c3', name: 'Carla Mendes', role: 'Cientista de Dados', location: 'Belo Horizonte',
+    _id: 'c3', name: 'Carla Mendes', role: 'Cientista de Dados', location: 'Aveiro',
     work_mode: 'remote', carga: 'part_time', relocate: 'no', years_experience: 3,
     tags: ['python','ml','pandas','gcp','sql'], total_score: 79, hard_score: 76,
     soft_skills: { 'Comunicação': 4, 'Colaboração': 4, 'Liderança': 3, 'Adaptabilidade': 4, 'Resolução de Problemas': 5, 'Criatividade': 4 },
   },
   {
-    _id: 'c4', name: 'Diego Alves', role: 'DevOps Engineer', location: 'Curitiba',
+    _id: 'c4', name: 'Diego Alves', role: 'DevOps Engineer', location: 'Aveiro',
     work_mode: 'onsite', carga: 'full_time', relocate: 'yes', years_experience: 5,
     tags: ['aws','kubernetes','docker','terraform','go'], total_score: 85, hard_score: 83,
     soft_skills: { 'Comunicação': 3, 'Colaboração': 5, 'Liderança': 3, 'Adaptabilidade': 4, 'Resolução de Problemas': 5, 'Criatividade': 3 },
@@ -85,7 +85,7 @@ const MOCK_CANDIDATES = [
     soft_skills: { 'Comunicação': 4, 'Colaboração': 5, 'Liderança': 4, 'Adaptabilidade': 5, 'Resolução de Problemas': 5, 'Criatividade': 4 },
   },
   {
-    _id: 'c7', name: 'Gabriela Rocha', role: 'QA Engineer', location: 'São Paulo',
+    _id: 'c7', name: 'Gabriela Rocha', role: 'QA Engineer', location: 'Coimbra',
     work_mode: 'onsite', carga: 'full_time', relocate: 'no', years_experience: 4,
     tags: ['cypress','jest','javascript','typescript'], total_score: 74, hard_score: 71,
     soft_skills: { 'Comunicação': 4, 'Colaboração': 5, 'Liderança': 3, 'Adaptabilidade': 3, 'Resolução de Problemas': 4, 'Criatividade': 3 },
