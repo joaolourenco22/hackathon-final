@@ -26,8 +26,8 @@ export default function KPIs({ kpis, jobsCount }) {
   return (
     <section className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
       <KPI label="Candidatos" value={kpis?.count} />
-      <KPI label="Vagas" value={jobsCount} />
-      <KPI label="Media Hard" value={avgHard} />
+      <KPI label="Vagas" value={"-"} />
+      <KPI label="Média Hard" value={avgHard} />
     </section>
   );
 }

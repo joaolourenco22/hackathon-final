@@ -22,11 +22,11 @@ export default function Home() {
           </div>
 
           <div className="bg-white p-8 md:p-10 md:border-l border-gray-200">
-            <h1 className="text-2xl font-bold text-violet-600">Sign in</h1>
+            <h1 className="text-2xl font-bold text-violet-600">Iniciar sessão</h1>
 
             <div className="mt-6 space-y-5">
               <div>
-                <label htmlFor="email" className="block text-sm text-gray-700">Enter email</label>
+                <label htmlFor="email" className="block text-sm text-gray-700">E-mail</label>
                 <div className="relative mt-2">
                   <input id="email" type="email" placeholder="email@empresa.com" className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 pr-9 outline-none focus:ring-2 focus:ring-violet-500 focus:border-violet-500" />
                   <span className="absolute inset-y-0 right-0 flex items-center text-gray-400">
@@ -36,7 +36,7 @@ export default function Home() {
               </div>
 
               <div>
-                <label htmlFor="password" className="block text-sm text-gray-700">Enter password</label>
+                <label htmlFor="password" className="block text-sm text-gray-700">Password</label>
                 <div className="relative mt-2">
                   <input id="password" type="password" placeholder="********" className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 pr-9 outline-none focus:ring-2 focus:ring-violet-500 focus:border-violet-500" />
                   <span className="absolute inset-y-0 right-0 flex items-center text-gray-400">
@@ -48,15 +48,15 @@ export default function Home() {
               <div className="flex items-center justify-between text-sm">
                 <label className="inline-flex items-center gap-2 select-none">
                   <input type="checkbox" className="accent-violet-600" />
-                  <span>Remember me</span>
+                  <span>Lembrar-me</span>
                 </label>
-                <a href="#" className="text-violet-700 hover:underline">Forgot Password?</a>
+                <a href="#" className="text-violet-700 hover:underline">Esqueci Password?</a>
               </div>
 
-              <button type="button" className="ui-button-primary w-full py-2.5" onClick={handleSignIn}>Sign in</button>
+              <button type="button" className="ui-button-primary w-full py-2.5" onClick={handleSignIn}>Iniciar sessão</button>
 
               <div className="text-center text-sm text-gray-700">
-                Don't have an account <a href="#" className="text-violet-700 hover:underline font-medium">Register here</a>
+                Não tenho conta. <a href="#" className="text-violet-700 hover:underline font-medium">Registar aqui</a>
               </div>
             </div>
           </div>

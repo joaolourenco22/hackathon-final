@@ -45,7 +45,7 @@ export default function Filters({
     <section className="ui-panel p-5">
       <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
         <div className="md:col-span-2">
-          <Label htmlFor="stacks">Stacks/Linguagens (multi)</Label>
+          <Label htmlFor="stacks">Linguagens (múltipla seleção)</Label>
           <select
             id="stacks"
             multiple
@@ -64,7 +64,7 @@ export default function Filters({
         </div>
 
         <div>
-          <Label htmlFor="role">Role</Label>
+          <Label htmlFor="role">Cargo</Label>
           <Select
             id="role"
             value={filters.role}
@@ -93,7 +93,7 @@ export default function Filters({
         </div>
 
         <div>
-          <Label htmlFor="home_office">Home office</Label>
+          <Label htmlFor="home_office">Remoto</Label>
           <Select
             id="home_office"
             value={filters.home_office || ''}
@@ -120,7 +120,7 @@ export default function Filters({
         </div>
 
         <div>
-          <Label htmlFor="carga">Carga</Label>
+          <Label htmlFor="carga">Regime de trabalho</Label>
           <Select
             id="carga"
             value={filters.carga || ''}
@@ -188,7 +188,7 @@ export default function Filters({
           >
             <option value="total">Score Total</option>
             <option value="soft">Soft skills</option>
-            <option value="hard">Hard (GitHub)</option>
+            <option value="hard">Hard skills</option>
           </Select>
         </div>
       </div>

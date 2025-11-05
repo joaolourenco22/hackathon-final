@@ -179,7 +179,7 @@ export default function Fil() {
         {/* SeleÃ§Ã£o para comparaÃ§Ã£o */}
         <section className="ui-panel p-4">
           <div className="flex items-center justify-between gap-3 flex-wrap">
-            <div className="text-sm text-gray-800">Selecionados para comparaÃ§Ã£o ({selectedIds.length}/3)</div>
+            <div className="text-sm text-gray-800">Selecionados para comparação ({selectedIds.length}/3)</div>
             <div className="flex gap-2 flex-wrap">
               {selectedIds.map((id) => {
                 const c = list.find((x) => x._id === id) || candidates.find((x) => x._id === id);
@@ -191,7 +191,7 @@ export default function Fil() {
                 ) : null;
               })}
               {selectedIds.length > 0 && (
-                <button className="text-sm text-violet-700 hover:text-violet-900" onClick={() => setSelectedIds([])}>Limpar seleÃ§Ã£o</button>
+                <button className="text-sm text-violet-700 hover:text-violet-900" onClick={() => setSelectedIds([])}>Limpar seleção</button>
               )}
             </div>
           </div>
