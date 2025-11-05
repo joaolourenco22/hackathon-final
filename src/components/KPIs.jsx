@@ -4,9 +4,9 @@ function KPI({ label, value }) {
   const display =
     value === null || value === undefined || value === '' ? '-' : value;
   return (
-    <div className="ui-panel p-4 border-l-4 border-l-violet-500/70 hover:shadow-md transition-shadow">
-      <div className="text-xs text-gray-600">{label}</div>
-      <div className="text-3xl font-bold text-gray-900" aria-label={label}>
+    <div className="ui-panel p-4 hover:shadow-md transition-shadow" style={{ borderLeft: '4px solid color-mix(in srgb, var(--primary) 70%, transparent)' }}>
+      <div className="text-xs text-[color:var(--text-muted)]">{label}</div>
+      <div className="text-3xl font-bold text-[var(--foreground)]" aria-label={label}>
         {display}
       </div>
     </div>

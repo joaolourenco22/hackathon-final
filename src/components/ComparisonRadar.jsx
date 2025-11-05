@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+﻿import React, { useMemo } from 'react';
 import Radar from './Radar';
 
 export default function ComparisonRadar({ candidates = [], selectedIds = [] }) {
@@ -12,9 +12,10 @@ export default function ComparisonRadar({ candidates = [], selectedIds = [] }) {
 
   return (
     <div className="ui-panel p-4">
-      <h2 className="text-sm text-gray-800 mb-2">Radar Comparação (Hard × Soft × Total)</h2>
-      <Radar title="Radar Comparação" axes={['Hard', 'Soft', 'Total']} datasets={datasets} maxValue={100} />
-      <div className="text-xs text-gray-700 mt-2">Selecione até 3 candidatos para comparar.</div>
+      <h2 className="text-sm text-[var(--foreground)] mb-2">Radar ComparaÃ§Ã£o (Hard Ã— Soft Ã— Total)</h2>
+      <Radar title="Radar ComparaÃ§Ã£o" axes={['Hard', 'Soft', 'Total']} datasets={datasets} maxValue={100} />
+      <div className="text-xs text-[color:var(--text-muted)] mt-2">Selecione atÃ© 3 candidatos para comparar.</div>
     </div>
   );
 }
+

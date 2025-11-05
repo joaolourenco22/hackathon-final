@@ -86,10 +86,10 @@ export default function CandidateCard({ candidate, index = 0, onClick }) {
 
       {/* Side social icons */}
       <div className="absolute top-4 right-4 flex flex-col gap-2" aria-label="Redes sociais">
-        <a href={ghLink} target="_blank" rel="noopener noreferrer" title={ghUrl ? 'Abrir GitHub' : 'Pesquisar no GitHub'} className={`inline-flex items-center justify-center w-8 h-8 rounded-full border ${ghUrl ? 'text-gray-800' : 'text-gray-500'} border-gray-200 bg-white hover:bg-gray-50`}>
+        <a href={ghLink} target="_blank" rel="noopener noreferrer" title={ghUrl ? 'Abrir GitHub' : 'Pesquisar no GitHub'} className={`inline-flex items-center justify-center w-8 h-8 rounded-full border ${ghUrl ? 'text-[var(--foreground)]' : 'text-[color:var(--text-muted)]'}`} style={{ background: 'var(--panel-bg)', borderColor: 'var(--panel-border)' }}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fillRule="evenodd" d="M12 2C6.477 2 2 6.486 2 12.02c0 4.427 2.865 8.185 6.839 9.504.5.092.683-.218.683-.486 0-.24-.009-.876-.014-1.72-2.782.605-3.37-1.343-3.37-1.343-.454-1.155-1.11-1.463-1.11-1.463-.907-.62.069-.608.069-.608 1.003.071 1.53 1.03 1.53 1.03.892 1.53 2.341 1.088 2.91.833.091-.647.35-1.088.636-1.338-2.221-.253-4.556-1.114-4.556-4.956 0-1.094.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.503.337 1.91-1.296 2.748-1.026 2.748-1.026.546 1.378.203 2.397.1 2.65.64.7 1.028 1.594 1.028 2.688 0 3.852-2.339 4.699-4.566 4.947.36.31.68.92.68 1.855 0 1.338-.012 2.417-.012 2.747 0 .27.18.582.688.483A10.03 10.03 0 0 0 22 12.02C22 6.486 17.523 2 12 2Z" clipRule="evenodd" /></svg>
         </a>
-        <a href={liLink} target="_blank" rel="noopener noreferrer" title={liUrl ? 'Abrir LinkedIn' : 'Pesquisar no LinkedIn'} className={`inline-flex items-center justify-center w-8 h-8 rounded-full border ${liUrl ? 'text-gray-800' : 'text-gray-500'} border-gray-200 bg-white hover:bg-gray-50`}>
+        <a href={liLink} target="_blank" rel="noopener noreferrer" title={liUrl ? 'Abrir LinkedIn' : 'Pesquisar no LinkedIn'} className={`inline-flex items-center justify-center w-8 h-8 rounded-full border ${liUrl ? 'text-[var(--foreground)]' : 'text-[color:var(--text-muted)]'}`} style={{ background: 'var(--panel-bg)', borderColor: 'var(--panel-border)' }}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.983 3.5C4.983 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.483 1.12 2.483 2.5ZM.3 8.2h4.4V23H.3V8.2Zm7.7 0h4.2v2.015h.06c.586-1.11 2.017-2.285 4.154-2.285C20.7 7.93 23 9.987 23 14.18V23h-4.4v-7.75c0-1.848-.034-4.224-2.575-4.224-2.58 0-2.974 2.01-2.974 4.088V23H8V8.2Z"/></svg>
         </a>
       </div>
@@ -101,8 +101,8 @@ export default function CandidateCard({ candidate, index = 0, onClick }) {
             {initials(candidate.name)}
           </div>
         </div>
-        <div className="text-lg font-semibold text-gray-900">{candidate.name}</div>
-        <div className="text-sm text-gray-700">{candidate.role}</div>
+        <div className="text-lg font-semibold text-[var(--foreground)]">{candidate.name}</div>
+        <div className="text-sm text-[color:var(--text-muted)]">{candidate.role}</div>
       </div>
 
       {/* Score progress */}
@@ -123,7 +123,7 @@ export default function CandidateCard({ candidate, index = 0, onClick }) {
       </div>
 
       {/* Location */}
-      <div className="mt-3 flex flex-wrap items-center justify-center gap-2 text-sm text-gray-700">
+      <div className="mt-3 flex flex-wrap items-center justify-center gap-2 text-sm text-[color:var(--text-muted)]">
         <span className="inline-flex items-center gap-1">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/></svg>
           {candidate.location}
@@ -132,7 +132,7 @@ export default function CandidateCard({ candidate, index = 0, onClick }) {
 
       {/* Languages */}
       <div className="mt-3 flex flex-wrap items-center justify-center gap-2">
-        <span className="text-xs text-gray-700">Linguagens:</span>
+        <span className="text-xs text-[color:var(--text-muted)]">Linguagens:</span>
         {languages.length === 0 ? (
           <span className="ui-chip text-xs">Sem informação</span>
         ) : (

@@ -2,7 +2,7 @@ import React from 'react';
 
 function Label({ children, htmlFor }) {
   return (
-    <label htmlFor={htmlFor} className="text-sm text-gray-800">
+    <label htmlFor={htmlFor} className="text-sm text-[var(--foreground)]">
       {children}
     </label>
   );
@@ -12,7 +12,13 @@ function Select({ id, children, ...props }) {
   return (
     <select
       id={id}
-      className="w-full border border-gray-300 rounded-lg px-3 py-2 bg-white outline-none focus:ring-2 focus:ring-violet-500"
+      className="w-full border rounded-lg px-3 py-2 outline-none focus:ring-2"
+      style={{
+        background: 'var(--panel-bg)',
+        borderColor: 'var(--panel-border)',
+        color: 'var(--foreground)',
+        boxShadow: 'none'
+      }}
       {...props}
     >
       {children}
@@ -21,7 +27,7 @@ function Select({ id, children, ...props }) {
 }
 
 function Slider({ id, min = 0, max = 1, step = 0.05, ...props }) {
-  return <input id={id} type="range" min={min} max={max} step={step} className="w-full accent-violet-600" {...props} />;
+  return <input id={id} type="range" min={min} max={max} step={step} className="w-full" style={{ accentColor: 'var(--primary)' }} {...props} />;
 }
 
 export default function Filters({
@@ -43,7 +49,8 @@ export default function Filters({
           <select
             id="stacks"
             multiple
-            className="w-full border border-gray-300 rounded-lg px-3 py-2 bg-white outline-none focus:ring-2 focus:ring-violet-500 h-32"
+            className="w-full border rounded-lg px-3 py-2 outline-none focus:ring-2 h-32"
+            style={{ background: 'var(--panel-bg)', borderColor: 'var(--panel-border)', color: 'var(--foreground)' }}
             value={filters.stacks || []}
             onChange={(e) => {
               const vals = Array.from(e.target.selectedOptions).map((o) => o.value);
@@ -230,7 +237,7 @@ export default function Filters({
         ((filters.sort_by || 'total') !== 'total')
       ) && (
         <div className="mt-4 border-t pt-3">
-          <div className="text-sm text-gray-800 mb-2">Filtros ativos</div>
+          <div className="text-sm text-[var(--foreground)] mb-2">Filtros ativos</div>
           <div className="flex flex-wrap gap-2 items-center">
             {/* Stacks */}
             {Array.isArray(filters.stacks) && filters.stacks.map((s) => (

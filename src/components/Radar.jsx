@@ -39,15 +39,15 @@ export default function Radar({
     <svg width={width} height={height} role="img" aria-label={title} className="w-full h-auto">
       <title>{title}</title>
       {grid.map((r, idx) => (
-        <circle key={idx} cx={cx} cy={cy} r={r} fill="none" stroke="#e5e7eb" />
+        <circle key={idx} cx={cx} cy={cy} r={r} fill="none" stroke="var(--panel-border)" />
       ))}
       {axes.map((label, i) => {
         const [x, y] = polarPoint(cx, cy, radius, i * angleStep);
         const [tx, ty] = polarPoint(cx, cy, radius + 12, i * angleStep);
         return (
           <g key={label}>
-            <line x1={cx} y1={cy} x2={x} y2={y} stroke="#e5e7eb" />
-            <text x={tx} y={ty} textAnchor="middle" dominantBaseline="middle" className="fill-gray-800 text-xs">
+            <line x1={cx} y1={cy} x2={x} y2={y} stroke="var(--panel-border)" />
+            <text x={tx} y={ty} textAnchor="middle" dominantBaseline="middle" className="text-xs" style={{ fill: 'var(--foreground)' }}>
               {label}
             </text>
           </g>
