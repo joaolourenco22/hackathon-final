@@ -105,7 +105,7 @@ function expandCandidates(base = [], times = 3) {
   for (let t = 1; t <= times; t++) {
     base.forEach((c, idx) => {
       const id = `${c._id}_x${t}`;
-      const name = `${c.name} ${t+1}`;
+      const name = c.name; // manter o nome sem números
       const location = locs[(idx + t) % locs.length];
       const tweak = (v) => Math.max(50, Math.min(100, Math.round((Number(v)||0) + (t*3) - (idx%2?2:0))));
       out.push({
