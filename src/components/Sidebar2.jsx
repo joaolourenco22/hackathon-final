@@ -37,9 +37,9 @@ export default function Sidebar2() {
   const router = useRouter();
 
   return (
-    <aside className="w-64 shrink-0 h-screen sticky top-0 flex flex-col p-3">
-      <div className="ui-sidebar rounded-3xl flex-1 flex flex-col overflow-hidden">
-        <div className="h-20 px-5 flex items-center  border-b border-white/15">
+    <aside className="w-64 shrink-0 h-screen sticky top-0 left-0 flex flex-col">
+      <div className="ui-sidebar flex-1 flex flex-col overflow-hidden">
+        <div className="h-20 px-5 flex items-center border-b border-white/15">
           <Image src="/logotipoN.png" alt="EGJP Solution" width={80} height={80}  />
           <span className="font-semibold text-white">DevMatch</span>
         </div>
