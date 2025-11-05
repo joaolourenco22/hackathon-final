@@ -73,9 +73,9 @@ export default function Home() {
   return (
     <div className="bg-[#f5f5f8] min-h-screen p-4">
       <div className="max-w-7xl mx-auto space-y-4">
-        
+        {/* KPIs topo */}
+        <KPIs kpis={kpis} jobsCount={0} />
 
-     
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <section className="lg:col-span-2">
             <div className="flex items-center justify-between mb-2">
