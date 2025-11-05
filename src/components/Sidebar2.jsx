@@ -52,14 +52,14 @@ export default function Sidebar2() {
                 <li key={it.label}>
                   <Link
                     href={it.href}
-                    className={`group relative flex items-center gap-3 px-3.5 py-2 rounded-xl text-sm transition-colors ${active ? 'bg-white/10 text-white shadow-sm' : 'text-white/90 hover:text-white hover:bg-white/10'}`}
+                    className={`group relative flex items-center gap-3 px-3.5 py-2 rounded-xl text-sm transition-colors ${active ? 'bg-purple-400 text-purple-900 shadow-sm' : 'text-white/90 hover:text hover:bg-white/10'}`}
                     aria-current={active ? 'page' : undefined}
                   >
                     <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg text-white/90">
                       <ActiveIcon />
                     </span>
                     <span className="flex-1 font-medium">{it.label}</span>
-                    <span className="opacity-0 group-hover:opacity-100 transition-opacity text-white/90" aria-hidden>
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden>
                       <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 5l7 7-7 7"/></svg>
                     </span>
                   </Link>
